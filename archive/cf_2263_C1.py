@@ -19,15 +19,13 @@ def solve():
     a = [0]*n
     for i in range(0, n, 1):
         a[i] = nextInt()
-    max_ = 0
+
     cSum = [0] * (n + 1)
     for i in range(0, n, 1):
         if (i + 1) * a[i] < n :
             cSum[(i + 1) * a[i]] += 1
         if (i + 1) * (a[i] + 1) < n :
             cSum[(i + 1) * (a[i] + 1)] -= 1
-            max_ = max(max_, (i + 1) * (a[i] + 1))
-
     ans = 0
     for i in range(0, n, 1) :
         cSum[i] += cSum[i - 1]
@@ -38,17 +36,7 @@ def solve():
         if cSum[i] == 0:
             print(i, end = ' ')
 
-    print(cSum)
-    MOD = 1000000007
-    ans = 1
-    for _ in range(0, n - max_, 1):
-        ans *= 2
-        ans %= MOD
-
-
-
     print()
-    print(ans)
 
 t = nextInt()
 while t > 0:

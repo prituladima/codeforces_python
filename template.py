@@ -1,3 +1,5 @@
+import sys, threading
+
 def tokens():
     while True:
         for token in input().split():
@@ -21,7 +23,19 @@ def solve():
         a[i] = nextInt()
 
 
-t = nextInt()
-while t > 0:
-    t -= 1
-    solve()
+def main():
+    t = nextInt()
+    while t > 0:
+        t -= 1
+        solve()
+
+INCREASED_RECURSION_LIMIT = False
+
+if INCREASED_RECURSION_LIMIT:
+    sys.setrecursionlimit(1 << 25)
+    threading.stack_size(1 << 27)
+    thread = threading.Thread(target=main)
+    thread.start()
+    thread.join()
+else:
+    main()
