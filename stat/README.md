@@ -4,15 +4,8 @@ conda activate cf-stat
 ```
 
 ```bash
-python generate_time.py CF_div2 C
+python generate_time.py CF_div2 C 45
 ```
-
-```bash
-python generate_time.py Leetcode Medium
-```
-
-# TODO
-- Add time gate for call. In min. Like this:
 
 ```bash
 python generate_time.py Leetcode Medium 25
