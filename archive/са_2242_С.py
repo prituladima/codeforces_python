@@ -51,8 +51,7 @@ def solve():
         n -= (howMuch - delta) * uniq_elements
         uniq_elements -= cnt_to_group_size[howMuch]
         delta = howMuch
-        # testing difference
-
+        # diff 3
         # n -= cnt_to_group_size[g] * uniq_elements
         # uniq_elements -= cnt_to_group_size[g]
         # if uniq_elements != 0 and abs(n - k) % uniq_elements == 0:
