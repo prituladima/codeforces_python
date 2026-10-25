@@ -6,8 +6,9 @@
 History lives in .history/<file name>.zip next to this script, one entry per change, named
 <YYYY-MM-DDTHH-MM-SS>.diff (unified diff).  On start the whole file is written as a diff against an empty
 file, unless the file can be restored exactly from the entries already in the zip; then nothing is
-written.  After that, every 10 seconds the file is compared with the last recorded state and, if it
-changed, the diff is appended.  Unchanged: nothing.  The file must exist when you start.
+written.  After that an entry is appended every 10 seconds, always: the diff if the file changed, a
+headers-only diff if it did not.  So the number of entries times 10 seconds is the time spent, across
+all sessions, and the diffs show when the edits happened.  The file must exist when you start.
 """
 import sys, os, re, time, difflib, datetime, zipfile, shutil
 
@@ -91,32 +92,40 @@ def main():
         print('  file matches the history, nothing written at start', flush=True)
     first_write_pending = not existing            # empty history: the first record() always writes, even for an empty file
 
-    def record():
+    def record(tick):
+        """Append an entry: the diff if the file changed; on a tick, a headers-only diff even if it did not."""
         nonlocal last, last_stamp, written, first_write_pending
         if not os.path.exists(path):
             return
         cur = read_lines(path)
-        if cur == last and not first_write_pending:
+        changed = cur != last
+        if not changed and not tick and not first_write_pending:
             return
         first_write_pending = False
         now = stamp()
         diff = list(difflib.unified_diff(last, cur, fromfile=f'{name} @ {last_stamp}', tofile=f'{name} @ {now}', lineterm='', n=3))
-        if not diff:                             # an empty file at the very start: headers only, so the start is on record
+        if not diff:                             # no change (a timer tick) or an empty file at the start: headers only
             diff = [f'--- {name} @ {last_stamp}', f'+++ {name} @ {now}']
         entry = now + '.diff'
-        if entry in entries(zip_path):           # two changes inside one second: keep both
+        if entry in entries(zip_path):           # two entries inside one second: keep both
             entry = now + f'-{int(time.time() * 1000) % 1000:03d}.diff'
         append_entry(zip_path, entry, '\n'.join(diff) + '\n')
         last, last_stamp, written = cur, now, written + 1
-        print(f'  {now}  {len(cur):>4} lines  {entry}', flush=True)
+        if changed:
+            print(f'  {now}  {len(cur):>4} lines  {entry}', flush=True)
+        elif written % 6 == 0:                   # a quiet heartbeat once a minute
+            total = len(existing) + written
+            print(f'  {now}  no change, {total} entries = {total * INTERVAL // 60} min total', flush=True)
 
     try:
+        record(tick=False)                       # the start: whole file, or nothing if the zip restores it
         while True:
-            record()
             time.sleep(INTERVAL)
+            record(tick=True)
     except KeyboardInterrupt:
-        record()                                 # do not lose the last edits
-        print(f'\nstopped, {written} diff(s) written this run', flush=True)
+        record(tick=False)                       # do not lose the last edits
+        total = len(existing) + written
+        print(f'\nstopped, {written} entries this run, {total} in total = about {total * INTERVAL // 60} min {total * INTERVAL % 60} s on this file', flush=True)
         sys.exit(0)
 
 if __name__ == '__main__':
