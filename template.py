@@ -10,6 +10,12 @@ it = tokens()
 def nextInt():
     return int(next(it))
 
+def nextIntArray(n):
+    a = [0] * n
+    for i in range(n):
+        a[i] = nextInt()
+    return a
+
 def nextToken():
     return next(it)
 
@@ -18,15 +24,12 @@ def nextFloat():
 
 def solve():
     n = nextInt()
-    a = [0]*n
-    for i in range(0, n, 1):
-        a[i] = nextInt()
+    a = nextIntArray(n)
 
 
 def main():
     t = nextInt()
-    while t > 0:
-        t -= 1
+    for _ in range(t):
         solve()
 
 INCREASED_RECURSION_LIMIT = False
