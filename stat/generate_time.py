@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# todo review this neiro-slop
 """Minutes-per-attempt chart from "Competitive programming.xlsx" (first sheet).
 
 Usage:  python generate_time.py <type> <letter> <gate_minutes>

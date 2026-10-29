@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# todo review this neiro-slop
 """Record how a file changes while you solve, as diffs inside one zip.
 
     python watch.py <file>              # e.g. python watch.py cf_2300_C.py ; Ctrl-C to stop; run again to resume
