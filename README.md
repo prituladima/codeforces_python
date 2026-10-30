@@ -26,5 +26,8 @@ Reality is: I have to enforce Python to become proficient in it.
 
 How to use watcher:
 ```bash
-python watcher.py "cf_0000_A.py" 
+python watcher.py "cf_2256_A.py" 
+python watcher.py "cf_2256_B.py" 
+python watcher.py "cf_2256_C.py" 
+python watcher.py "cf_2256_D.py" 
 ```
