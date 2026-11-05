@@ -33,8 +33,9 @@ python watcher.py "cf_2256_D.py"
 ```
 
 ## Types of training:
+Python enforsed for all. 
 Global metric:
-when 6 from last 8 under 45 min -> increase range +100
+when 6 from last 8 solved under 45 min -> increase range of interest for +100
 ### Type A
 virtual contest on codeforses any div2
 upsolve
@@ -50,5 +51,5 @@ What I tried have to be upsolved.
 Can solve and think about problems in any order and drop as i wish.
 file wather has informations about breaks anyway.
 ### Type D
-Solve one problem of +500 elo. 
+Solve one problem of any [1900] elo. 
 Time is 5h limit. 
