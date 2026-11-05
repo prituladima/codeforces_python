@@ -39,6 +39,7 @@ CF  = 0.757 · AC + 711
 AC  = 1.322 · CF − 940 (how to get AtCoder complexity)
 Python enforsed for all, independantly on platform or contest type. 
 Global metric:
+range of interest, solved, date is stick to first time problem was opened. 
 when 6 from last 8 solved under 45 min -> increase range of interest for +100
 ### Type A
 virtual contest on codeforses any div2. 
@@ -51,10 +52,12 @@ Limit time: 5h
 Limit time per task: 30 min. 
 Point of this type: dense thinking for 5 hours.
 ### Type C
-No time limit as such - we have to upsolve as much as possible. 
+Upsolve my range of interest: div2 C [R, R + 200]
+No time limit as such - we have to upsolve as much as possible.
 3-5h as orientir.
 What I tried (DNS - did not solve) have to be upsolved.
-Can solve and think about problems in any order and drop as i wish.
+Can NOT solve and think about problems in any order and drop as i wish.
+order is enforsed with the most weak/unfamiliar patern first, so we have to have a few DNS problems in range 
 file watcher has informations about breaks anyway.
 patches will have gap more then 10 seconds and even have information how much time i avoided the problem.
 ### Type D
