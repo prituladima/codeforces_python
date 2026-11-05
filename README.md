@@ -33,6 +33,7 @@ python watcher.py "cf_2256_D.py"
 ```
 
 ## Types of training:
+I maintain list of problems I watched at least once.
 My last performance on cf was: 1253
 we consider rating R to be 1200
 CF  = 0.757 · AC + 711
@@ -47,14 +48,15 @@ real contest also very informative
 Do not upsolve.
 What to observe: elo performance with respect to rated parisipants
 ### Type B
-Solve my range of interest: div2 C [R, R + 200]
+Solve my range of interest ONLY: div2 C [R, R + 200]
 Limit time: 5h
 Limit time per task: 30 min. 
 Point of this type: dense thinking for 5 hours.
 ### Type C
-Upsolve my range of interest: div2 C [R, R + 200]
+Upsolve all problem i tried and DNS independantly on range and what type left it.
 No time limit as such - we have to upsolve as much as possible.
-3-5h as orientir.
+Limit time: 5h
+No time limit per problem.
 What I tried (DNS - did not solve) have to be upsolved.
 Can NOT solve and think about problems in any order and drop as i wish.
 order is enforsed with the most weak/unfamiliar patern first, so we have to have a few DNS problems in range 
