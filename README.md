@@ -37,7 +37,7 @@ My last performance on cf was: 1253
 we consider rating R to be 1200
 CF  = 0.757 · AC + 711
 AC  = 1.322 · CF − 940 (how to get AtCoder complexity)
-Python enforsed for all. 
+Python enforsed for all, independantly on platform or contest type. 
 Global metric:
 when 6 from last 8 solved under 45 min -> increase range of interest for +100
 ### Type A
