@@ -33,23 +33,35 @@ python watcher.py "cf_2256_D.py"
 ```
 
 ## Types of training:
+My last performance on cf was: 1253
+we consider rating R to be 1200
+CF  = 0.757 · AC + 711
+AC  = 1.322 · CF − 940 (how to get AtCoder complexity)
 Python enforsed for all. 
 Global metric:
 when 6 from last 8 solved under 45 min -> increase range of interest for +100
 ### Type A
-virtual contest on codeforses any div2
-upsolve
-Limit time: 5h
+virtual contest on codeforses any div2. 
+real contest also very informative
+Do not upsolve.
 What to observe: elo performance with respect to rated parisipants
 ### Type B
-Solve my range of interest: div2 C [1200 - 1400]
+Solve my range of interest: div2 C [R, R + 200]
 Limit time: 5h
 Limit time per task: 30 min. 
 Point of this type: dense thinking for 5 hours.
 ### Type C
-What I tried have to be upsolved.
+No time limit as such - we have to upsolve as much as possible. 
+3-5h as orientir.
+What I tried (DNS - did not solve) have to be upsolved.
 Can solve and think about problems in any order and drop as i wish.
-file wather has informations about breaks anyway.
+file watcher has informations about breaks anyway.
+patches will have gap more then 10 seconds and even have information how much time i avoided the problem.
 ### Type D
-Solve one problem of any [1900] elo. 
+Solve one problem of any [R + 500] elo. 
 Time is 5h limit. 
+
+Week for comp programming:
+TypeB, TypeC, TypeB (atCoder), TypeC (atCoder), TypeA, Type D
+
+
