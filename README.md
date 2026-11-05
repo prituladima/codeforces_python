@@ -31,3 +31,15 @@ python watcher.py "cf_2256_B.py"
 python watcher.py "cf_2256_C.py" 
 python watcher.py "cf_2256_D.py" 
 ```
+
+## Types of training:
+### Type A
+virtual contest on codeforses any div2
+upsolve
+Limit time: 5h
+What to observe: elo performance with respect to rated parisipants
+### Type B
+Solve my range of interest: div2 C [1200 - 1400] 
+while 6 from last 8 under 45 min
+Limit time: 5h
+Limit time per task: no
